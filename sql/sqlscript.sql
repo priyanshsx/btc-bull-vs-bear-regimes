@@ -52,3 +52,16 @@ SELECT
     END AS regime 
 FROM btc 
 ORDER BY date        
+
+-- computing daily returns for each regime
+
+ALTER TABLE btc_regime_updated ADD COLUMN daily_returns DOUBLE 
+
+UPDATE btc_regime_updated 
+SET daily_returns = sub.daily_returns
+FROM (
+    SELECT date, 
+    (close - LAG(close) OVER (ORDER BY date)) / LAG(close) OVER (ORDER BY date) AS daily_returns 
+    FROM btc_regime_updated  
+) sub 
+WHERE btc_regime_updated.date = sub.date 
