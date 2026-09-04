@@ -81,4 +81,13 @@ SET vol = sub.vol
 FROM (
     SELECT date, vol FROM btc
 ) sub
-WHERE btc_regime_updated.date = sub.date 
+WHERE btc_regime_updated.date = sub.date
+
+-- creating a new table with basic stats
+CREATE TABLE btc_regime_stats AS 
+SELECT regime, COUNT(*) AS days, 
+    AVG(daily_returns) AS avg_daily_return,
+    STDDEV(daily_returns) AS volatility, 
+    AVG(vol) AS avg_vol
+FROM btc_regime_updated WHERE regime IS NOT NULL
+GROUP BY regime 
