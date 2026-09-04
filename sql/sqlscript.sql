@@ -65,3 +65,10 @@ FROM (
     FROM btc_regime_updated  
 ) sub 
 WHERE btc_regime_updated.date = sub.date 
+
+-- comparing regimes 
+SELECT regime, COUNT(*) AS days,
+    AVG(daily_returns) AS avg_daily_return,
+    STDDEV(daily_returns) AS volatility
+FROM btc_regime_updated WHERE regime is NOT NULL 
+GROUP BY regime 
