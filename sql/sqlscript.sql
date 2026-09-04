@@ -72,3 +72,13 @@ SELECT regime, COUNT(*) AS days,
     STDDEV(daily_returns) AS volatility
 FROM btc_regime_updated WHERE regime is NOT NULL 
 GROUP BY regime 
+
+-- importing the missing volume column from btc to btc_regime_updated 
+ALTER TABLE btc_regime_updated ADD COLUMN vol BIGINT 
+
+UPDATE btc_regime_updated
+SET vol = sub.vol 
+FROM (
+    SELECT date, vol FROM btc
+) sub
+WHERE btc_regime_updated.date = sub.date 
