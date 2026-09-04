@@ -25,3 +25,10 @@ SELECT
 FROM btc
 ORDER BY date
 """)
+
+-- checking for NULLs
+con.sql("SELECT * FROM btc_regime WHERE date IS NULL OR close IS NULL OR ma_200 IS NULL OR regime IS NULL").show()
+
+-- I was expecting the first 199 entries to show up as NULL, which did not happen. This may be because SQL is taking the average of the current row (since we have in our code ROWS BETWEEN 199 PRECEDING AND CURRENT ROW).
+-- Since those are false values and do not amount to 200-Day MA, the first 199 rows will have to be NULLed out. 
+
