@@ -4,7 +4,7 @@ import pandas as pd
 import statsmodels as sm
 import duckdb 
 
-con = duckdb.connect('home/priyansh/Documents/d/btc bull vs bear regimes/data/raw/main.duckdb')
+con = duckdb.connect('/home/priyansh/Documents/d/btc bull vs bear regimes/data/raw/main.duckdb')
 
 df = con.sql("""
     SELECT regime, 
@@ -14,5 +14,4 @@ df = con.sql("""
     WHERE regime IS NOT NULL 
     GROUP BY regime 
     """).df()
-
 print(df.head(10))
