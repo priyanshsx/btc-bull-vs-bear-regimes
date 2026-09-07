@@ -2,7 +2,7 @@
 
 CREATE TABLE btc AS SELECT * FROM read_csv_auto('btc_daily.csv')
 
-
+-- checking to ensure the table got created
 SELECT * FROM btc LIMIT 5
 
 -- checking for NULLs
