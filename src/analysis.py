@@ -37,3 +37,7 @@ df_bear = con.sql("""
 t_stat, p_value = stats.ttest_ind(df_bull, df_bear)
 print(f"T-statistic: {t_stat: .4f}")
 print(f"p_value: {p_value: .4f}")
+
+# checking the direction of the effect
+print(f"Bull regime mean: {df_bull.mean(): .4f}")
+print(f"Bear regime mean: {df_bear.mean(): .4f}")
