@@ -49,3 +49,23 @@ shapiro_bear = stats.shapiro(df_bear)
 
 print(f"Bull regime - W-stat: {shapiro_bull.statistic: .4f}, p-value: {shapiro_bull.pvalue: .7f}")
 print(f"Bear regime - W-stat: {shapiro_bear.statistic: .4f}, p-value: {shapiro_bear.pvalue: .7f}")
+
+# plotting charts 
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+
+# avg daily return by regime
+ax[0].bar(df['regime'], df['avg_daily_return'], color=['green' if r == 'bull' else 'red' for r in df['regime']])
+ax[0].set_title('Average Daily Return by Regime')
+ax[0].set_ylabel('Average Daily Return')
+ax[0].axhline(0, color='gray', linewidth=0.8)
+
+# volatility by regime 
+ax[1].bar(df['regime'], df['volatility'], color=['green' if r == 'bull' else 'red' for r in df['regime']])
+ax[1].set_title('Volatility (stdev of daily returns) by regime')
+ax[1].set_ylabel('Standard Deviation')
+
+plt.suptitle('BTC: Bull vs. Bear Regime Comparison (200-day) MA')
+plt.tight_layout()
+plt.savefig('/home/priyansh/Documents/d/btc bull vs bear regimes/figures/btc_regime_comparison.png', dpi=300)
+plt.show()
