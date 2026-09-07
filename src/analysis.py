@@ -41,3 +41,11 @@ print(f"p_value: {p_value: .4f}")
 # checking the direction of the effect
 print(f"Bull regime mean: {df_bull.mean(): .4f}")
 print(f"Bear regime mean: {df_bear.mean(): .4f}")
+
+## checking if each group (bull and bear) is actually normally distributed because t-test generally makes that assumption 
+
+shapiro_bull = stats.shapiro(df_bull)
+shapiro_bear = stats.shapiro(df_bear)
+
+print(f"Bull regime - W-stat: {shapiro_bull.statistic: .4f}, p-value: {shapiro_bull.pvalue: .7f}")
+print(f"Bear regime - W-stat: {shapiro_bear.statistic: .4f}, p-value: {shapiro_bear.pvalue: .7f}")
