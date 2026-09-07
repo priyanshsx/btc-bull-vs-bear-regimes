@@ -74,11 +74,11 @@ cd [repo-folder-name]
 2. Install dependencies
 pip install duckdb pandas numpy matplotlib scipy statsmodels yfinance
 
-3. Pull raw data (or use the CSV already in raw_data/, if included)
-python3 src/pull_data.py
+3. Pull raw data (or use the CSV already in data/raw/)
+python3 src/analysis.py
 
 4. Load into DuckDB and build the regime classification table
-python3 src/build_regime_table.py
+python3 src/analysis.py
 
 5. Run the statistical analysis and generate the chart
 python3 src/analysis.py
