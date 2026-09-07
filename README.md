@@ -23,6 +23,9 @@
 
 ## Key Findings
 
+1. Upon investigation, we found a p-value of 0.0010. This implies that if there were truly no difference between the daily returns in bull and bear regimes for the calculated sample, there were a 0.1% chance we would observe a difference this large purely by chance. 
+2. The t-statistic, upon running on both the independent samples was found to be 3.3028. 
+
 
 ## Visualization
 
