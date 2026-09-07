@@ -1,7 +1,7 @@
 # BTC: Bull vs Bear Classification for the Past 2 Years Using Technicals
 
 ## Overview 
-This project classifies each day of BTC trading over the past 2 and a half years into a "Bull" or "Bear" regime using a single, widely-used technical indicator: the 200-day moving average. The classifications are as follows: 
+This project classifies each day of BTC trading over the past 3.6 years into a "Bull" or "Bear" regime using a single, widely-used technical indicator: the 200-day moving average. The classifications are as follows: 
 
 - Bull: price above the 200-day MA 
 - Bear: price below the 200-day MA
