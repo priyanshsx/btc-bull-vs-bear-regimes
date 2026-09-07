@@ -67,20 +67,20 @@ This is my second end-to-end data analysis project, built to extend what I learn
 
 ## How to Reproduce
 
-# 1. Clone the repo
+1. Clone the repo
 git clone [your-repo-link]
 cd [repo-folder-name]
 
-# 2. Install dependencies
+2. Install dependencies
 pip install duckdb pandas numpy matplotlib scipy statsmodels yfinance
 
-# 3. Pull raw data (or use the CSV already in raw_data/, if included)
+3. Pull raw data (or use the CSV already in raw_data/, if included)
 python3 src/pull_data.py
 
-# 4. Load into DuckDB and build the regime classification table
+4. Load into DuckDB and build the regime classification table
 python3 src/build_regime_table.py
 
-# 5. Run the statistical analysis and generate the chart
+5. Run the statistical analysis and generate the chart
 python3 src/analysis.py
 
 ## Project Structure
