@@ -1,17 +1,29 @@
 # BTC: Bull vs Bear Classification for the Past 2 Years Using Technicals
 
 ## Overview 
+This project classifies each day of BTC trading over the past 2 and a half years into a "Bull" or "Bear" regime using a single, widely-used technical indicator: the 200-day moving average. The classifications are as follows: 
+
+- Bull: price above the 200-day MA 
+- Bear: price below the 200-day MA
+
+It then tests whether this simple classification actually corresponds to a measurable difference in BTC' daily return behavior, or whether the labels are effectively meaningless noise. 
 
 
 ## Research Question
+Does BTC's daily return behavior differ meaningfully between Bull and Bear regimes, as defined by a simple 200-day moving average crossover? 
 
+Specifically: 
+
+- Is the average daily return significantly different between Bull and Bear days? 
+- Is that difference statistically distinguishable from noise? 
+- Does volatility also differ meaningfully between the two regimes, or only returns? 
 
 ## Data
-- **Source:** 
-- **Time period:** 
-- **Granularity:** 
+- **Source:** Yahoo Finance (via the yfinance Python library)
+- **Time period:** 01-01-2023 - 31-08-2026
+- **Granularity:** Daily OHLCV 
 - **Size:** 
-- **Access method:** 
+- **Access method:** Public API
 
 ## Tools & Methods
 - **Database:** DuckDB (SQL) for storage, cleaning, and aggregation
@@ -50,4 +62,4 @@ project-folder/
 ```
 
 ---
-*Author: Priyansh Saxena | https://www.linkedin.com/in/priyansh-saxena/ | 3rd September, 2026*
+*Author: Priyansh Saxena | https://www.linkedin.com/in/priyansh-saxena/ | 7th September, 2026*
